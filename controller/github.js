@@ -11,8 +11,24 @@ function findEmail(req, res) {
     };
     request(options, function(err, response, body) {
         let data = JSON.parse(body);
-        console.log(data);
-    res.render('index');
+        let pushevent = data.filter(event => event.type === 'PushEvent');
+        let emails = [];
+        let userData = [];
+        pushevent.forEach(evt => {
+            let evtcommits = evt.payload.commits;
+            evtcommits.forEach(e => {
+                email = e.author.email;
+                if (!emails.includes(email)) {
+                    emails.push(email);
+                    userData.push({
+                        name: e.author.name,
+                        email: email
+                    })
+                }
+            })
+        })
+        console.log(emails);
+        res.render('index', {userData});
     })
 }
 
