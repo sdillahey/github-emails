@@ -6,10 +6,20 @@
   </head>
   <body>
     <h1>GitHub User Emails</h1>
-    <form action="/user" method="POST">
+    <form action="/" method="POST">
       <label for="username">Enter Username:</label>
       <input type="text" name="username">
       <button type="submit">Submit</button>
     </form>
+      <% if (userData.length) { %>
+        <p>Commit Contributors:</p>
+        <ul>
+          <% userData.forEach(user => { %>
+            <li><%= user.name %>: <%= user.email %></li>
+         <% }); %>
+        </ul>
+      <% } else { %>
+        <p>Submit a Username!<p>
+      <% } %>
   </body>
 </html>

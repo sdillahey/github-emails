@@ -27,7 +27,7 @@ function findEmail(req, res) {
                 }
             })
         })
-        console.log(emails);
+        console.log(userData);
         res.render('index', {userData});
     })
 }
