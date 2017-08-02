@@ -3,7 +3,7 @@
 
 To use you will need to fork, create a .env, npm install & npm start - it's that easy!
 
-Create a top-level .env file which will just have `GITHUB_TOKEN=` with your personal access token which you can create <a href="https://github.com/settings/tokens">here</a>.
+Create a top-level .env file which will just have `GITHUB_TOKEN=` with your personal access token. You can create your token <a href="https://github.com/settings/tokens">here</a>.
 
 Happy Networking!
 
