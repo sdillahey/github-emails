@@ -23,14 +23,13 @@ function findEmail(req, res) {
                     userData.push({
                         name: e.author.name,
                         email: email
-                    })
-                }
-            })
-        })
-        console.log(userData);
+                    });
+                };
+            });
+        });
         res.render('index', {userData});
-    })
-}
+    });
+};
 
 module.exports = {
     findEmail

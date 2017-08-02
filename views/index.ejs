@@ -16,7 +16,7 @@
         <p>Commit Contributors:</p>
         <ul>
           <% userData.forEach(user => { %>
-            <li><%= user.name %>: <%= user.email %></li>
+            <li><%= user.name %>: <a href="mailto:<%=user.email%>"><%= user.email %></a></li>
          <% }); %>
         </ul>
       <% } else { %>
