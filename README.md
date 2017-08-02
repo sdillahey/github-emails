@@ -1,5 +1,5 @@
 # The Networker
-## A simple Node app to find the emails of GitHub users
+## A simple Node app that utilizes the GitHub API to find the emails of GitHub users
 
 To use you will need to fork, create a .env, npm install & npm start - it's that easy!
 
