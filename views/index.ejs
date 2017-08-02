@@ -12,7 +12,9 @@
       <input type="text" name="username">
       <button type="submit">Submit</button>
     </form>
-      <% if (userData.length) { %>
+      <% if (error) { %>
+        <p style="color:red">Invalid Username</p>
+      <% } else if (userData.length) { %>
         <p>Commit Contributors:</p>
         <ul>
           <% userData.forEach(user => { %>

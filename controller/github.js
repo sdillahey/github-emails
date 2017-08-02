@@ -11,7 +11,12 @@ function findEmail(req, res) {
     };
     request(options, function(err, response, body) {
         let data = JSON.parse(body);
+        // to handle invalid username submission
+        if (data.message === 'Not Found') {
+           return res.render('index', {error: true});
+        }
         let pushevent = data.filter(event => event.type === 'PushEvent');
+        //emails is used as a counter to avoid duplicate email addresses
         let emails = [];
         let userData = [];
         pushevent.forEach(evt => {
@@ -27,7 +32,7 @@ function findEmail(req, res) {
                 };
             });
         });
-        res.render('index', {userData});
+        res.render('index', {userData, error: false});
     });
 };
 

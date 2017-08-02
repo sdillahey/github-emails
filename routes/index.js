@@ -4,7 +4,7 @@ var githubCtrl = require('../controller/github');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {userData: []});
+  res.render('index', {userData: [], error: null});
 });
 
 router.post('/', githubCtrl.findEmail)
